@@ -18,19 +18,29 @@
             <tr>
                 <th scope="row">{{$i}}</th>
                 <td>{{$ar->title}}</td>
-                <td>...</td>
+                <td>{{$ar->categories->name}}</td>
                 <td>{{$ar->content}}</td>
-                <td>{{$ar->image}}</td>
+                <td>
+                    @if($ar->image != null)
+                        <img src="{{url('storage/'.$ar->image)}}" height="100" width="100" class="img rounded"/>
+                    @else
+                        <span class="fst-italic">No Image</span>
+                    @endif
+                </td>
                 <td>{{$ar->updated_at}}</td>
                 <td>
                     <button class='btn btn-warning text-white py-1' title='Edit' data-bs-toggle='modal' data-bs-target=''>
                         <i class='fa-solid fa-pen-to-square'></i></button>
                 </td>
                 <td>
-                    <button class='btn btn-danger text-white py-1' title='Delete' data-bs-toggle='modal' data-bs-target=''>
+                    <button class='btn btn-danger text-white py-1' title='Delete' data-bs-toggle='modal' data-bs-target='#hapus-artikel-Modal-{{$ar->id}}'>
                         <i class='fa-solid fa-trash'></i></button>
                 </td>
             </tr>
+
+            <!--Modal action.-->
+            @include('layouts.form.delete_articles')
+
             @php($i++)
         @endforeach
     </tbody>

@@ -20,3 +20,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/home/delete_categories/{id}', [App\Http\Controllers\HomeController::class, 'delete_categories']);
+Route::post('/home/delete_articles/{id}', [App\Http\Controllers\HomeController::class, 'delete_articles']);
