@@ -21,4 +21,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/home/delete_categories/{id}', [App\Http\Controllers\HomeController::class, 'delete_categories']);
+Route::post('/home/add_categories', [App\Http\Controllers\HomeController::class, 'add_categories']);
+Route::post('/home/update_categories/{id}', [App\Http\Controllers\HomeController::class, 'update_categories']);
+
 Route::post('/home/delete_articles/{id}', [App\Http\Controllers\HomeController::class, 'delete_articles']);
+Route::post('/home/add_articles', [App\Http\Controllers\HomeController::class, 'add_articles']);
+Route::post('/home/update_articles/{id}', [App\Http\Controllers\HomeController::class, 'update_articles']);

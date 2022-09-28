@@ -17,10 +17,14 @@
 
                 <div class="row mt-4">
                     <div class="col-lg-8">
+                        <button class="btn btn-success mb-2 float-end" data-bs-toggle='modal' data-bs-target='#tambah-artikel-Modal'><i class="fa-solid fa-plus"></i> Tambah Artikel</button>
                         @include('layouts.articles_table')
+                        @include('layouts.form.add_articles')
                     </div>
                     <div class="col-lg-4">
+                        <button class="btn btn-success mb-2 float-end" data-bs-toggle='modal' data-bs-target='#tambah-kategori-Modal'><i class="fa-solid fa-plus"></i> Tambah Kategori</button>
                         @include('layouts.categories_table')
+                        @include('layouts.form.add_categories')
                     </div>
                 </div>
             </div>

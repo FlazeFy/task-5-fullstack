@@ -29,7 +29,7 @@
                 </td>
                 <td>{{$ar->updated_at}}</td>
                 <td>
-                    <button class='btn btn-warning text-white py-1' title='Edit' data-bs-toggle='modal' data-bs-target=''>
+                    <button class='btn btn-warning text-white py-1' title='Edit' data-bs-toggle='modal' data-bs-target='#edit-artikel-Modal-{{$ar->id}}'>
                         <i class='fa-solid fa-pen-to-square'></i></button>
                 </td>
                 <td>
@@ -40,7 +40,8 @@
 
             <!--Modal action.-->
             @include('layouts.form.delete_articles')
-
+            @include('layouts.form.edit_articles')
+            
             @php($i++)
         @endforeach
     </tbody>
